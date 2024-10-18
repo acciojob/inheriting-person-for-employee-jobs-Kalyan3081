@@ -1,25 +1,30 @@
-// complete this js code
+// Person constructor function
 function Person(name, age) {
-	this.name=name
-	this.age=age
+    this.name = name;
+    this.age = age;
 }
 
-Person.prototype.greet=function () {
-	return(`Hello, my name is ${name}, I am ${age} years old`)
-}
+// Add greet method to the Person prototype
+Person.prototype.greet = function () {
+    return `Hello, my name is ${this.name}, I am ${this.age} years old`; // Use this to refer to instance properties
+};
 
-
+// Employee constructor function
 function Employee(name, age, jobTitle) {
-	Person.call(this, name, age)
-	this.jobTitle=jobTitle
+    Person.call(this, name, age); // Call the Person constructor to inherit properties
+    this.jobTitle = jobTitle;
 }
 
-Employee.prototype=Object.create(Person.prototype)
-Employee.prototype.constructor=Employee
+// Inherit from Person prototype
+Employee.prototype = Object.create(Person.prototype);
 
-Employee.prototype.jobGreet=function () {
-	return(`Hello, my name is ${name}, I am ${age} years old, and my job title is ${jobTitle}.`)
-}
+// Set the constructor reference back to Employee
+Employee.prototype.constructor = Employee;
+
+// Add jobGreet method to the Employee prototype
+Employee.prototype.jobGreet = function () {
+    return `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`; // Use this to refer to instance properties
+};
 
 // Do not change code below this line
 window.Person = Person;
