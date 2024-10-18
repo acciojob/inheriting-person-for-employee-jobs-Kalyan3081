@@ -6,7 +6,7 @@ function Person(name, age) {
 
 // Add greet method to the Person prototype
 Person.prototype.greet = function () {
-    return `Hello, my name is ${this.name}, I am ${this.age} years old`; // Use this to refer to instance properties
+    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old`); // Use this to refer to instance properties)
 };
 
 // Employee constructor function
@@ -23,7 +23,7 @@ Employee.prototype.constructor = Employee;
 
 // Add jobGreet method to the Employee prototype
 Employee.prototype.jobGreet = function () {
-    return `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`; // Use this to refer to instance properties
+    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`); // Use this to refer to instance properties
 };
 
 // Do not change code below this line
