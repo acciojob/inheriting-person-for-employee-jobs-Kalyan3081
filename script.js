@@ -36,7 +36,7 @@ class Employee extends Person {
    */
   jobGreet() {
     console.log(
-`Hello, my name is ${name}, I am ${age} years old, and my job title is ${jobTitle}.`
+      `Hello, my name is ${this.name}, I am ${this.age} years old`
     );
   }
 }
@@ -44,23 +44,3 @@ class Employee extends Person {
 // Expose the classes to the global window object for Cypress testing
 window.Person = Person;
 window.Employee = Employee;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
